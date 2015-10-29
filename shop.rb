@@ -1,8 +1,9 @@
 class Shop
-	attr_reader :shop_items
-	def initialize (shop_name)
+	attr_reader :shop_items, :shop_name, :shopping_cart
+	def initialize (shop_name,shopping_cart)
 		@shop_name = shop_name
 		@shop_items = []
+		@shopping_cart = shopping_cart
 	end
 	
 	def add_item_to_stock (item,stock,minimum_stock)
@@ -25,7 +26,7 @@ class Shop
 		minimum_stock = gets.chomp
 		@shop_items[index].stock = stock.to_i
 		@shop_items[index].minimum_stock = minimum_stock.to_i
-		puts "*** Stock succesfully updated"
+		puts "*** Stock succesfully updated ***"
 		show_shop_stock()
 	end	
 

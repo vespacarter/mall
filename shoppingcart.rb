@@ -1,10 +1,18 @@
 class ShoppingCart
 	attr_reader
-	def initialize (shop)
+	def initialize
 		@total_items = []
 	end
 	def add_item(item)
 		@total_items.push(item)
+		puts "#{item.name} added"
+	end
+
+	def show_cart
+		puts "Item Class / Item name / Price"
+		@total_items.each_with_index do |cart_item,index|
+			puts "#{index +1}.- #{cart_item.class} - #{cart_item.name} / #{cart_item.price}"
+		end
 	end
 
 	def calculate_total
@@ -25,12 +33,13 @@ class ShoppingCart
 	end
 
 	def calculate_cart_discounts(total_price)
+		discount = 0
 		if @total_items.size >= 5 
 			total_price.to_f
-			total_price = total_price *0.1
+			discount = total_price *0.1
 			puts "More than 5 items in cart, 10% discount applied: -#{(total_price / 100) * 10} euros"
 		end
-		total_price
+		discount
 	end
 
 	def calculate_final_total

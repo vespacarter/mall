@@ -13,7 +13,7 @@ bed = Houseware.new("Bed",200)
 pillow = Houseware.new("Pillow",150)
 
 #initialize shop and first item loading
-myshop = Shop.new("Main Shop")
+myshop = Shop.new("Main Shop",ShoppingCart.new)
 myshop.add_item_to_stock(apple,10,2)
 myshop.add_item_to_stock(banana,10,2)
 myshop.add_item_to_stock(pear,10,2)
@@ -21,7 +21,7 @@ myshop.add_item_to_stock(strawberry,10,2)
 myshop.add_item_to_stock(chair,10,2)
 myshop.add_item_to_stock(bed,10,2)
 myshop.add_item_to_stock(pillow,10,2)
-micarro = ShoppingCart.new(myshop)
+micarro = ShoppingCart.new
 #myshop.start_shop
 Menu.new.start_shop(myshop)
 
