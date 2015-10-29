@@ -1,6 +1,6 @@
 class ShoppingCart
 	attr_reader
-	def initialize
+	def initialize (shop)
 		@total_items = []
 	end
 	def add_item(item)
